@@ -1,5 +1,5 @@
 Backlog::Application.routes.draw do
-  root :to => "inventories#index"
+  root :to => "home#index"
   resources :inventories
   resources :categories
 
