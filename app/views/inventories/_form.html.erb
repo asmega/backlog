@@ -1,4 +1,4 @@
-<%= form_for(@inventory) do |f| %>
+<%= form_for(@inventory, :html => { :class => "form-stacked" }) do |f| %>
   <% if @inventory.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
