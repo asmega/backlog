@@ -1,1 +1,13 @@
-<%= RedCloth.new("h1. This is a test of textile\n\nParagraph\n\nAnother paragraph\n\n* Bullets").to_html.html_safe %>
+<h2>Delivered</h2>
+
+<table id="delivered">
+  <tbody>
+    <% Inventory.all.each do |i| %>
+      <tr>
+        <td>
+          <%= i.data %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
