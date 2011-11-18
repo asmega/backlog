@@ -9,10 +9,10 @@
             <%= i.data %>
           </td>
           <td class="span1">
-            <%= button_to 'Edit', edit_inventory_path(i), :method => :get %>
+            <%= link_to 'Edit', edit_inventory_path(i), :class => "btn" %>
           </td>
           <td class="span1">
-            <%= button_to 'Delete', inventory_path(i), :confirm => 'Are you sure?', :method => :delete %>
+            <%= button_to 'Delete', inventory_path(i), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %>
           </td>
         </tr>
       <% end %>
