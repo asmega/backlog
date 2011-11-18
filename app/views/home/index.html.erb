@@ -5,8 +5,11 @@
     <tbody>
       <% Inventory.where(:category_id => cat.id).each do |i| %>
         <tr>
-          <td>
+          <td class="span10">
             <%= i.data %>
+          </td>
+          <td class="span6" style="text-align:right;">
+            <%= date_in_words(i.date) unless i.date.nil? %>
           </td>
         </tr>
       <% end %>
