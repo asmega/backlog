@@ -1,4 +1,6 @@
 class InventoriesController < ApplicationController
+  layout "admin"
+
   # GET /inventories
   # GET /inventories.xml
   def index
