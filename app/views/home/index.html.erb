@@ -1,13 +1,15 @@
-<h2>Delivered</h2>
+<% Category.all.each do |cat| %>
+  <h2><%= cat.name %></h2>
 
-<table id="delivered">
-  <tbody>
-    <% Inventory.all.each do |i| %>
-      <tr>
-        <td>
-          <%= i.data %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table id="<%= cat.technical_name %>">
+    <tbody>
+      <% Inventory.where(:category_id => cat.id).each do |i| %>
+        <tr>
+          <td>
+            <%= i.data %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
