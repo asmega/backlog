@@ -1,3 +1,15 @@
 table#delivered {
   background-color: #CDEACD;
 }
+
+table#backlog {
+  background-color: #DDF4FB;
+}
+
+table#current_sprint {
+  background-color: #FDF5D9;
+}
+
+table#next_sprint {
+  background-color: #eee;
+}
