@@ -46,7 +46,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to(@inventory, :notice => 'Inventory was successfully created.') }
+        format.html { redirect_to(inventories_path, :notice => 'Inventory was successfully created.') }
         format.xml  { render :xml => @inventory, :status => :created, :location => @inventory }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.update_attributes(params[:inventory])
-        format.html { redirect_to(@inventory, :notice => 'Inventory was successfully updated.') }
+        format.html { redirect_to(inventories_path, :notice => 'Inventory was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
