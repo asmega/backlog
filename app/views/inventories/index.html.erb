@@ -5,7 +5,10 @@
     <tbody>
       <% Inventory.where(:category_id => cat.id).each do |i| %>
         <tr>
-          <td class="span14">
+          <td class="span2">
+            <%= i.date.try(:strftime, "%d/%m/%Y") %>
+          </td>
+          <td class="span12">
             <%= i.data %>
           </td>
           <td class="span1">
