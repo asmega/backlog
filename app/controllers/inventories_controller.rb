@@ -1,5 +1,6 @@
 class InventoriesController < ApplicationController
   layout "admin"
+  before_filter :authenticate
 
   # GET /inventories
   # GET /inventories.xml
@@ -80,6 +81,13 @@ class InventoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(inventories_url) }
       format.xml  { head :ok }
+    end
+  end
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "chris" && password == "missioncontrol"
     end
   end
 end
