@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.8)
     abstract (1.0.0)
     actionmailer (3.0.11)
       actionpack (= 3.0.11)
@@ -74,5 +75,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   rails (= 3.0.11)
   sqlite3
