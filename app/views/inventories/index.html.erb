@@ -3,7 +3,7 @@
 
   <table id="<%= cat.technical_name %>">
     <tbody>
-      <% Inventory.where(:category_id => cat.id).each do |i| %>
+      <% Inventory.where(:category_id => cat.id).order("date DESC").each do |i| %>
         <tr>
           <td class="span2">
             <%= i.date.try(:strftime, "%d/%m/%Y") %>
