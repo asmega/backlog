@@ -1,23 +1,18 @@
-<h1>Listing inventories</h1>
+<% Category.all.each do |cat| %>
+  <h2><%= cat.name %></h2>
 
-<table>
-  <tr>
-    <th>Data</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @inventories.each do |inventory| %>
-  <tr>
-    <td><%= inventory.data %></td>
-    <td><%= link_to 'Show', inventory %></td>
-    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-    <td><%= link_to 'Destroy', inventory, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <table id="<%= cat.technical_name %>">
+    <tbody>
+      <% Inventory.where(:category_id => cat.id).each do |i| %>
+        <tr>
+          <td class="span15">
+            <%= i.data %>
+          </td>
+          <td class="span1">
+            <%= button_to 'Delete', inventory_path(i), :confirm => 'Are you sure?', :method => :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Inventory', new_inventory_path %>
