@@ -2,6 +2,11 @@ body {
   padding-top: 50px;
 }
 
+textarea {
+  height: auto;
+  width: auto;
+}
+
 .button_to {
   margin-bottom: 0px;
 }
