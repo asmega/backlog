@@ -1,16 +1,24 @@
-<% Category.all.each do |cat| %>
-  <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
+<ul class="tabs" data-tabs="tabs">
+  <% Category.all.each do |cat| %>
+    <li class="<%= cat == Category.first ? "active" : "" %>"><a href="#<%= cat.technical_name %>"><%= cat.name %></a></li>
+  <% end %>
+</ul>
 
-    <ol class="tasks span16" id="<%= cat.technical_name %>">
-      <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
-        <li id="task_<%= i.id %>" class="task row">
-          <div class="span13">
-            <%= i.name %>
-          </div>
-          <div class="span3" style="text-align:right;">
-            <span class="date"><%= date_in_words(i.date) unless i.date.nil? %>&nbsp;</span>
-          </div>
-        </li>
-      <% end %>
-    </ol>
-<% end %>
+<div class="pill-content">
+  <% Category.all.each do |cat| %>
+    <div class="<%= cat == Category.first ? "active" : "" %>" id="<%= cat.technical_name %>">
+      <ol class="tasks span16">
+        <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
+          <li id="task_<%= i.id %>" class="task row">
+            <div class="span13">
+              <%= i.name %>
+            </div>
+            <div class="span3" style="text-align:right;">
+              <span class="date"><%= date_in_words(i.date) unless i.date.nil? %>&nbsp;</span>
+            </div>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+  <% end %>
+</div>
