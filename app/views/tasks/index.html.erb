@@ -1,5 +1,5 @@
 <% Category.all.each do |cat| %>
-  <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
+  <h2><%= cat.name %> (<span id="<%= cat.technical_name %>_count"><%= "#{cat.tasks.count}" %></span>)</h2>
 
     <ol class="tasks span16" id="<%= cat.technical_name %>">
       <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
