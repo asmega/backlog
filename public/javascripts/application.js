@@ -7,7 +7,7 @@ $(function() {
       $.ajax({
         type: "PUT",
         url: "/tasks/order",
-        data: order + "&category=" + $(this).closest("table").attr("id")
+        data: order + "&category=" + $(this).closest("ol").attr("id")
       });
     }
   });

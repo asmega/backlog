@@ -1,22 +1,20 @@
 <% Category.all.each do |cat| %>
   <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
 
-  <table id="<%= cat.technical_name %>">
-    <tbody class="tasks">
+    <ol class="tasks span16" id="<%= cat.technical_name %>">
       <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
-        <tr id="task_<%= i.id %>" class="task">
-          <td class="span2">
-            <%= i.date.try(:strftime, "%d/%m/%Y") %>
-          </td>
-          <td class="span11">
+        <li id="task_<%= i.id %>" class="task row">
+          <div class="span2">
+            <%= i.date.try(:strftime, "%d/%m/%Y") %>&nbsp;
+          </div>
+          <div class="span11">
             <%= i.name %>
-          </td>
-          <td class="span3 action">
+          </div>
+          <div class="span3 action">
             <%= link_to 'Edit', edit_task_path(i), :class => "btn" %>
             <%= button_to 'Delete', task_path(i), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %>
-          </td>
-        </tr>
+          </div>
+        </li>
       <% end %>
-    </tbody>
-  </table>
+    </ol>
 <% end %>

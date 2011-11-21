@@ -30,24 +30,37 @@ textarea {
   background-color: #eee;
 }
 
-td.action {
-  padding: 4px;
-  text-align: right;
+ol.tasks {
+  margin-left: 0;
+  list-style: none;
 }
 
-table#delivered {
+ol.tasks li:first-child {
+  border-top: 1px solid #ddd;
+}
+
+ol.tasks li {
+  border-bottom: 1px solid #ddd;
+}
+
+ol.tasks li > div {
+  padding: 8px 0;
+  line-height: 28px;
+}
+
+#delivered li {
   background-color: #CDEACD;
 }
 
-table#backlog {
+#backlog li {
   background-color: #FDDFDE;
 }
 
-table#current_sprint {
+#current_sprint li {
   background-color: #FDF5D9;
 }
 
-table#next_sprint {
+#next_sprint li {
   background-color: #DDF4FB;
 }
 

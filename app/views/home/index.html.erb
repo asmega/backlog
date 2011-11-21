@@ -1,18 +1,16 @@
 <% Category.all.each do |cat| %>
   <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
 
-  <table id="<%= cat.technical_name %>">
-    <tbody>
+    <ol class="tasks span16" id="<%= cat.technical_name %>">
       <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
-        <tr>
-          <td class="span10">
+        <li id="task_<%= i.id %>" class="task row">
+          <div class="span13">
             <%= i.name %>
-          </td>
-          <td class="span6" style="text-align:right;">
-            <%= date_in_words(i.date) unless i.date.nil? %>
-          </td>
-        </tr>
+          </div>
+          <div class="span3" style="text-align:right;">
+            <%= date_in_words(i.date) unless i.date.nil? %>&nbsp;
+          </div>
+        </li>
       <% end %>
-    </tbody>
-  </table>
+    </ol>
 <% end %>
