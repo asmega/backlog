@@ -11,6 +11,10 @@ textarea {
   margin-bottom: 0px;
 }
 
+.task {
+  cursor: move;
+}
+
 table#delivered {
   background-color: #CDEACD;
 }

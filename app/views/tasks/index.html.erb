@@ -4,7 +4,7 @@
   <table id="<%= cat.technical_name %>">
     <tbody class="tasks">
       <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
-        <tr id="task_<%= i.id %>">
+        <tr id="task_<%= i.id %>" class="task">
           <td class="span2">
             <%= i.date.try(:strftime, "%d/%m/%Y") %>
           </td>
