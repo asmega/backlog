@@ -48,7 +48,7 @@ ol.tasks li > div {
   line-height: 28px;
 }
 
-#delivered li {
+#complete li {
   background-color: #CDEACD;
 }
 
