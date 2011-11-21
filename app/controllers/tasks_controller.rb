@@ -82,7 +82,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.xml
   def destroy
-    @task = task.find(params[:id])
+    @task = Task.find(params[:id])
     @task.destroy
 
     respond_to do |format|
