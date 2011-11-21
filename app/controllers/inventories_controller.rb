@@ -72,6 +72,13 @@ class InventoriesController < ApplicationController
     end
   end
 
+  def order
+    params[:task].each_with_index do |id, index|
+      Inventory.update_all(['position = ?', index + 1], ['id = ?', id])
+    end
+    render :nothing => true
+  end
+
   # DELETE /inventories/1
   # DELETE /inventories/1.xml
   def destroy

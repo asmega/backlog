@@ -1,6 +1,10 @@
 Backlog::Application.routes.draw do
   root :to => "home#index"
-  resources :inventories
+  resources :inventories do
+    collection do
+      put "order"
+    end
+  end
   resources :categories
 
   # The priority is based upon order of creation:

@@ -2,9 +2,9 @@
   <h2><%= cat.name %> <%= "(#{cat.inventories.count})" %></h2>
 
   <table id="<%= cat.technical_name %>">
-    <tbody>
-      <% Inventory.where(:category_id => cat.id).order("date DESC").each do |i| %>
-        <tr>
+    <tbody class="tasks">
+      <% Inventory.where(:category_id => cat.id).order("position ASC").each do |i| %>
+        <tr id="task_<%= i.id %>">
           <td class="span2">
             <%= i.date.try(:strftime, "%d/%m/%Y") %>
           </td>
