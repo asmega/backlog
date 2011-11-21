@@ -50,3 +50,8 @@ table#current_sprint {
 table#next_sprint {
   background-color: #DDF4FB;
 }
+
+.ui-sortable-helper:hover a,
+.ui-sortable-helper:hover form {
+  display: none;
+}
