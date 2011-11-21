@@ -8,13 +8,11 @@
           <td class="span2">
             <%= i.date.try(:strftime, "%d/%m/%Y") %>
           </td>
-          <td class="span12">
+          <td class="span11">
             <%= i.name %>
           </td>
-          <td class="span1">
+          <td class="span3 action">
             <%= link_to 'Edit', edit_task_path(i), :class => "btn" %>
-          </td>
-          <td class="span1">
             <%= button_to 'Delete', task_path(i), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %>
           </td>
         </tr>

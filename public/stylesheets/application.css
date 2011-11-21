@@ -15,6 +15,22 @@ textarea {
   cursor: move;
 }
 
+.task a,
+.task input {
+  display: none;
+}
+
+.task:hover a,
+.task:hover input,
+.task:hover form {
+  display: inline-block;
+}
+
+td.action {
+  padding: 4px;
+  text-align: right;
+}
+
 table#delivered {
   background-color: #CDEACD;
 }
