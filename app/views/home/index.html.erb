@@ -6,7 +6,7 @@
       <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
         <tr>
           <td class="span10">
-            <%= i.data %>
+            <%= i.name %>
           </td>
           <td class="span6" style="text-align:right;">
             <%= date_in_words(i.date) unless i.date.nil? %>
