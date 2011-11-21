@@ -26,6 +26,10 @@ textarea {
   display: inline-block;
 }
 
+.task:hover {
+  background-color: #eee;
+}
+
 td.action {
   padding: 4px;
   text-align: right;
@@ -36,7 +40,7 @@ table#delivered {
 }
 
 table#backlog {
-  background-color: #DDF4FB;
+  background-color: #FDDFDE;
 }
 
 table#current_sprint {
@@ -44,5 +48,5 @@ table#current_sprint {
 }
 
 table#next_sprint {
-  background-color: #eee;
+  background-color: #DDF4FB;
 }
