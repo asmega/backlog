@@ -1,9 +1,9 @@
 <% Category.all.each do |cat| %>
-  <h2><%= cat.name %> <%= "(#{cat.inventories.count})" %></h2>
+  <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
 
   <table id="<%= cat.technical_name %>">
     <tbody>
-      <% Inventory.where(:category_id => cat.id).order("position ASC").each do |i| %>
+      <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
         <tr>
           <td class="span10">
             <%= i.data %>

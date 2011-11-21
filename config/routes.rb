@@ -1,6 +1,6 @@
 Backlog::Application.routes.draw do
   root :to => "home#index"
-  resources :inventories do
+  resources :tasks do
     collection do
       put "order"
     end

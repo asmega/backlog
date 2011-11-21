@@ -5,7 +5,7 @@ $(function() {
       var order = ui.item.parent().sortable('serialize');
       $.ajax({
         type: "PUT",
-        url: "/inventories/order",
+        url: "/tasks/order",
         data: order
       });
     }

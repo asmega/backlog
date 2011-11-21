@@ -1,10 +1,10 @@
-<%= form_for(@inventory, :html => { :class => "form-stacked" }) do |f| %>
-  <% if @inventory.errors.any? %>
+<%= form_for(@task, :html => { :class => "form-stacked" }) do |f| %>
+  <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
       <ul>
-      <% @inventory.errors.full_messages.each do |msg| %>
+      <% @task.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

@@ -1,9 +1,9 @@
 <% Category.all.each do |cat| %>
-  <h2><%= cat.name %> <%= "(#{cat.inventories.count})" %></h2>
+  <h2><%= cat.name %> <%= "(#{cat.tasks.count})" %></h2>
 
   <table id="<%= cat.technical_name %>">
     <tbody class="tasks">
-      <% Inventory.where(:category_id => cat.id).order("position ASC").each do |i| %>
+      <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
         <tr id="task_<%= i.id %>">
           <td class="span2">
             <%= i.date.try(:strftime, "%d/%m/%Y") %>
@@ -12,10 +12,10 @@
             <%= i.data %>
           </td>
           <td class="span1">
-            <%= link_to 'Edit', edit_inventory_path(i), :class => "btn" %>
+            <%= link_to 'Edit', edit_task_path(i), :class => "btn" %>
           </td>
           <td class="span1">
-            <%= button_to 'Delete', inventory_path(i), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %>
+            <%= button_to 'Delete', task_path(i), :confirm => 'Are you sure?', :method => :delete, :class => "btn danger" %>
           </td>
         </tr>
       <% end %>
