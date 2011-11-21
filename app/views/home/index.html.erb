@@ -8,7 +8,7 @@
             <%= i.name %>
           </div>
           <div class="span3" style="text-align:right;">
-            <%= date_in_words(i.date) unless i.date.nil? %>&nbsp;
+            <span class="date"><%= date_in_words(i.date) unless i.date.nil? %>&nbsp;</span>
           </div>
         </li>
       <% end %>

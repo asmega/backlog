@@ -68,3 +68,7 @@ ol.tasks li > div {
 .ui-sortable-helper:hover form {
   display: none;
 }
+
+span.date {
+  margin-right: 5px;
+}
