@@ -76,7 +76,7 @@ class TasksController < ApplicationController
     category = Category.find_by_technical_name(params[:category])
     params[:task].each_with_index do |id, index|
       Task.update_all(['position = ?, category_id = ?', index + 1, category.id], ['id = ?', id])
-    end
+    end unless params[:task].nil?
     render :nothing => true
   end
 
