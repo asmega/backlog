@@ -8,7 +8,7 @@
   <% Category.all.each do |cat| %>
     <div class="<%= cat == Category.first ? "active" : "" %>" id="<%= cat.technical_name %>">
       <%= "There are currently no tasks in this category" if Task.where(:category_id => cat.id).empty? %>
-      <ol class="tasks span16">
+      <ol class="tasks span16 readonly">
         <% Task.where(:category_id => cat.id).order("position ASC").each do |i| %>
           <li id="task_<%= i.id %>" class="task row">
             <div class="span13">

@@ -73,3 +73,7 @@ ol.tasks li > div {
 span.date {
   margin-right: 5px;
 }
+
+ol.readonly li {
+  cursor: auto;
+}
