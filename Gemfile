@@ -8,6 +8,7 @@ gem 'rails', '3.0.11'
 gem 'sqlite3'
 gem 'RedCloth'
 gem 'jquery-rails'
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,6 +30,5 @@ gem 'jquery-rails'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development do
-  gem 'thin'
   gem 'ruby-debug'
 end
