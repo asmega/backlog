@@ -95,7 +95,7 @@ class TasksController < ApplicationController
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == "chris" && password == "missioncontrol"
+      username == "username" && password == "password"
     end
   end
 end
